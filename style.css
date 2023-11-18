@@ -1,0 +1,11 @@
+.mainSection
+{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.container
+{
+  background-color:blue;
+}
