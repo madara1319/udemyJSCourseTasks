@@ -1,12 +1,56 @@
+main, body{
+  display:flex;
+  justify-content:center;
+  align-content:center;
+  align-items:center;
+  background-color:#fff;
+}
 .mainSection
 {
+  height:80vh;
   display:flex;
   align-items:center;
   justify-content:center;
   flex-direction:column;
 }
+.mainButton{
+  margin:25px;
+  font-size:25px;
+  color:#fff;
+  background-color:black;
+}
+.boxOfBoxes
+{
+  display:flex;
+  flex-direction:row;
+  background-color:#fff;
+ gap:45px;
+ flex-wrap:wrap;
+}
 
 .container
 {
-  background-color:blue;
+  display:flex;
+  flex-direction:row;
+  background-color:black;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  width:5vh;
+  height:5vh;
+}
+
+.notVisible
+{
+  display:none;
+}
+.circleElement{
+  
+  border-radius:50%;
+  border:solid;
+  border-width:1px;
+  border-color:black;
+  border-color:black;
+  color:black;
+  background-color:#fff;
 }
