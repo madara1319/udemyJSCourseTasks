@@ -27,7 +27,19 @@ main, body{
  gap:45px;
  flex-wrap:wrap;
 }
-
+.mainBox{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+}
+.mySolution{
+  grid-column-start:1;
+}
+.courseSolution{
+  grid-column-start:2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 .container
 {
   display:flex;
