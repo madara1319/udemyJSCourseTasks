@@ -39,7 +39,7 @@ clickButton.addEventListener("click",()=>{
 //
 //}
 
-const courseSolution=document.querySelector(".courseSolution");
+const courseSolution=document.querySelector(".courseSection--js");
 
 //Pobieramy element z DOM (ze strony internetowej)
         const btn = document.querySelector(".courseMainButton--js");
@@ -72,7 +72,7 @@ const courseSolution=document.querySelector(".courseSolution");
                 activeNumber = 0;
                 div.classList.add("circle");
             }
-            document.body.appendChild(div);
+            courseSolution.appendChild(div);
             number++; //inkrementacja
 
             activeNumber++;

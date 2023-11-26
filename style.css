@@ -70,8 +70,14 @@ main, body{
 }
 .courseSolution{
   background-color:magenta;
+  width:50vw;
+  height:100vh;
 }
-
+.courseMainButton
+{
+  color:blue;
+  background-color:yellow;
+}
 .courseMainSection{
             display: block;
             margin: 10px auto;
