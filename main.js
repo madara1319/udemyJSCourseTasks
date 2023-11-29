@@ -1,3 +1,4 @@
+//change name of this file add modules of css js and html for each new task from course
 let section=document.querySelector(".section--js"); let box=document.querySelector(".container--js");
 let counter=0;
 let mainBox=document.querySelector(".boxOfBoxes--js");
