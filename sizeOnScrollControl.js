@@ -7,26 +7,35 @@ const windowHeight=window.innerHeight;
 console.log(windowHeight);
 background.addEventListener("wheel",()=>
   {
+   console.log("test"); 
 
     let style=getComputedStyle(square);
     let dim=1*style.height.match(numberRegex);
+
     console.log(dim);
 
-    for (let i=0; dim<=windowHeight/2; i++)
-    {
-
-       number+=5;
-        square.style.height=`${number}px`;
-      square.style.width=`${number}px`;
-    }
+    while((1*style.height.match(numberRegex))>=0)
+{
   if(dim>(windowHeight/2))
-  {
-    number-=5;
-  square.style.height=`${number}px`;
-  square.style.width=`${number}px`;
+ 
+    {
+      number-=5;
+      square.style.height=`${number}px`;
+      square.style.width=`${number}px`;
+      console.log(dim);
+    }
   }
-  else if(dim>=0)
-  {
 
+
+    while((1*style.height.match(numberRegex))<windowHeight/2)
+{
+  if((1*style.height.match(numberRegex))<(windowHeight/2))
+  
+    {
+      number+=5;
+      square.style.height=`${number}px`;
+      square.style.width=`${number}px`;
+      console.log(dim);
+    }
   }
 });
