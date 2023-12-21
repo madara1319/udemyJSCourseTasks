@@ -5,37 +5,52 @@ const square=document.querySelector(".container");
 const numberRegex=/\d+/g;
 const windowHeight=window.innerHeight;
 console.log(windowHeight);
-background.addEventListener("wheel",()=>
-  {
-   console.log("test"); 
+let style=getComputedStyle(square);
+let dim=1*style.height.match(numberRegex);
 
-    let style=getComputedStyle(square);
-    let dim=1*style.height.match(numberRegex);
+function checkScroll(){
 
-    console.log(dim);
-
-    while((1*style.height.match(numberRegex))>=0)
-{
-  if(dim>(windowHeight/2))
- 
+    if ((1*style.height.match(numberRegex))>=windowHeight/2)
     {
-      number-=5;
-      square.style.height=`${number}px`;
-      square.style.width=`${number}px`;
-      console.log(dim);
+      lowerTheSquare();
     }
-  }
+    else if((1*style.height.match(numberRegex))<=windowHeight){
+      enlargeTheSquare();
+    }
+}
+checkScroll();
+
+function lowerTheSquare(){
+    
+
+        background.addEventListener("wheel",()=>
+        {
+          if((1*style.height.match(numberRegex))>=0)
+          {   
+            number--;
+            square.style.height=`${number}px`;
+            square.style.width=`${number}px`;
+          }
+        }
+          return;
+      )
+
+    checkScroll();
+}
+
+function enlargeTheSquare(){
+        background.addEventListener("wheel",()=>
+          {
+            if((1*style.height.match(numberRegex))<=windowHeight/2)
+            {
+              number++;
+              square.style.height=`${number}px`;
+              square.style.width=`${number}px`;
+            }
+        }
+          return;
+      )
+    checkScroll();
+}
 
 
-    while((1*style.height.match(numberRegex))<windowHeight/2)
-{
-  if((1*style.height.match(numberRegex))<(windowHeight/2))
-  
-    {
-      number+=5;
-      square.style.height=`${number}px`;
-      square.style.width=`${number}px`;
-      console.log(dim);
-    }
-  }
-});
