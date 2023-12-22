@@ -1,5 +1,5 @@
 //window.alert("chuj");
-let number=25;
+let number=300;
 const background=document.querySelector("body");
 const square=document.querySelector(".container");
 const numberRegex=/\d+/g;
@@ -21,36 +21,39 @@ function checkScroll(){
 checkScroll();
 
 function lowerTheSquare(){
-    
-
-        background.addEventListener("wheel",()=>
-        {
           if((1*style.height.match(numberRegex))>=0)
           {   
-            number--;
-            square.style.height=`${number}px`;
-            square.style.width=`${number}px`;
-          }
+            background.addEventListener("wheel",()=>
+            {
+              number-=5;
+              square.style.height=`${number}px`;
+              square.style.width=`${number}px`;
+              checkScroll();
+            }
+            )
+            //return;
+        
         }
-          return;
-      )
+      
 
-    checkScroll();
 }
 
 function enlargeTheSquare(){
-        background.addEventListener("wheel",()=>
-          {
+
             if((1*style.height.match(numberRegex))<=windowHeight/2)
             {
-              number++;
-              square.style.height=`${number}px`;
-              square.style.width=`${number}px`;
+              background.addEventListener("wheel",()=>
+                {
+                  number+=5;
+                  square.style.height=`${number}px`;
+                  square.style.width=`${number}px`;
+                  checkScroll();
+                }
+                )
+               // return;
+        
+                //checkScroll();
             }
-        }
-          return;
-      )
-    checkScroll();
 }
 
 
