@@ -5,55 +5,50 @@ const square=document.querySelector(".container");
 const numberRegex=/\d+/g;
 const windowHeight=window.innerHeight;
 console.log(windowHeight);
-let style=getComputedStyle(square);
-let dim=1*style.height.match(numberRegex);
 
 function checkScroll(){
 
-    if ((1*style.height.match(numberRegex))>=windowHeight/2)
+let style=getComputedStyle(square);
+const currentHeight=1*style.height.match(numberRegex);
+    if ((currentHeight)>=windowHeight/2)
     {
       lowerTheSquare();
     }
-    else if((1*style.height.match(numberRegex))<=windowHeight){
+    else if((currentHeight)<=windowHeight/2||(currentHeight)===0){
       enlargeTheSquare();
     }
 }
 checkScroll();
 
 function lowerTheSquare(){
-          if((1*style.height.match(numberRegex))>=0)
-          {   
+
             background.addEventListener("wheel",()=>
             {
               number-=5;
               square.style.height=`${number}px`;
               square.style.width=`${number}px`;
-              checkScroll();
-            }
-            )
-            //return;
-        
+              console.log(number);
+          if((number)<=0)
+              {
+                background.removeEventListener("wheel",lowerTheSquare);
+                checkScroll();
+              }
+            });
         }
-      
-
-}
 
 function enlargeTheSquare(){
 
-            if((1*style.height.match(numberRegex))<=windowHeight/2)
-            {
-              background.addEventListener("wheel",()=>
-                {
-                  number+=5;
-                  square.style.height=`${number}px`;
-                  square.style.width=`${number}px`;
-                  checkScroll();
-                }
-                )
-               // return;
-        
-                //checkScroll();
-            }
+  background.addEventListener("wheel",()=>
+    {
+      number+=5;
+      square.style.height=`${number}px`;
+      square.style.width=`${number}px`;
+      if((number)>=windowHeight/2)
+      {
+        background.removeEventListener("wheel",enlargeTheSquare);
+        checkScroll();
+      }
+      });
 }
 
 
