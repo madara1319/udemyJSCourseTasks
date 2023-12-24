@@ -24,10 +24,10 @@ function lowerTheSquare(){
 
             background.addEventListener("wheel",()=>
             {
-              number-=5;
+              number--;
               square.style.height=`${number}px`;
               square.style.width=`${number}px`;
-              console.log(number);
+              console.log("zmniejszanie " + number);
           if((number)<=0)
               {
                 background.removeEventListener("wheel",lowerTheSquare);
@@ -40,9 +40,11 @@ function enlargeTheSquare(){
 
   background.addEventListener("wheel",()=>
     {
-      number+=5;
+      number++;
       square.style.height=`${number}px`;
       square.style.width=`${number}px`;
+
+      console.log("powiekszanie " + number);
       if((number)>=windowHeight/2)
       {
         background.removeEventListener("wheel",enlargeTheSquare);
