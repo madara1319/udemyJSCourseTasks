@@ -10,11 +10,11 @@ function checkScroll(){
 
 let style=getComputedStyle(square);
 const currentHeight=1*style.height.match(numberRegex);
-    if ((currentHeight)>=windowHeight/2)
+    if ((currentHeight)>windowHeight/2)
     {
       lowerTheSquare();
     }
-    else if((currentHeight)<=windowHeight/2||(currentHeight)===0){
+    else if((currentHeight)<windowHeight/2||(currentHeight)===0){
       enlargeTheSquare();
     }
 }
@@ -22,7 +22,7 @@ checkScroll();
 
 function lowerTheSquare(){
 
-            background.addEventListener("wheel",()=>
+            background.addEventListener("scroll",()=>
             {
               number--;
               square.style.height=`${number}px`;
@@ -30,7 +30,7 @@ function lowerTheSquare(){
               console.log("zmniejszanie " + number);
           if((number)<=0)
               {
-                background.removeEventListener("wheel",lowerTheSquare);
+                background.removeEventListener("scroll",lowerTheSquare);
                 checkScroll();
               }
             });
@@ -38,7 +38,7 @@ function lowerTheSquare(){
 
 function enlargeTheSquare(){
 
-  background.addEventListener("wheel",()=>
+  background.addEventListener("scroll",()=>
     {
       number++;
       square.style.height=`${number}px`;
@@ -47,7 +47,7 @@ function enlargeTheSquare(){
       console.log("powiekszanie " + number);
       if((number)>=windowHeight/2)
       {
-        background.removeEventListener("wheel",enlargeTheSquare);
+        background.removeEventListener("scroll",enlargeTheSquare);
         checkScroll();
       }
       });
