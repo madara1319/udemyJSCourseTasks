@@ -1,21 +1,27 @@
-//window.alert("chuj");
-let number=300;
-const background=document.querySelector("body");
-const square=document.querySelector(".container");
-const numberRegex=/\d+/g;
-const windowHeight=window.innerHeight;
-console.log(windowHeight);
+class SizeOnWheel {
+  #i = 0
+  constructor(element) {
+    this.element =element;
+    this.elementStyle=getComputedStyle(this.element);
+    this.initialDim=1*this.elementStyle.height;
 
-  let i=0;
-window.addEventListener("wheel",(event)=>{
-  if(event.deltaY>0){
-    console.log(i+=1);
-    square.style.height=`${i*25}px`;
-    square.style.width=`${i*25}px`;
+    this.init();
   }
-  else{
-    console.log(i-=1);
-    square.style.height=`${i*25}px`;
-    square.style.width=`${i*25}px`;
+//start method using event listener event wheel launching sizeOnWheel method
+  init() {
+    window.addEventListener('wheel',(event)=>{ this.#sizeOnWheel(event,this.element)})
   }
-})
+//private method changing size of element on event(wheel)
+  #sizeOnWheel = (event,element) => {
+    if (event.deltaY > 0) {
+      this.#i += 1
+    } else {
+      this.#i -= 1
+    }
+    this.elementStyle.style.height = `${this.initialDim+(this.#i * 25)}px`
+    this.elementStyle.style.width = `${this.initialDim+(this.#i * 25)}px`
+    console.log(element.style.height);
+  }
+}
+const square=document.querySelector('.container')
+new SizeOnWheel(square);
