@@ -4,6 +4,10 @@ body{
 }
 .mainHeader{
   height:5vh;
+  display:flex;
+}
+.changeScroll{
+  position:relative;
 }
 .mainSection {
   display: flex;

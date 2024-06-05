@@ -2,11 +2,17 @@ class SizeOnWheel {
   #i = 0;
   //direction for increasing decreasing variant in sizingToggle
   #direction=1;
-  constructor(element) {
+  constructor(element,scrollVariant) {
     this.element =element;
+    this.scrollVariant=scrollVariant;
     this.initialDim=parseFloat(getComputedStyle(this.element).height);
-    console.log(this.initialDim);
-    this.initSizingToggle();
+    this.removeEventListeners();
+    if (this.scrollVariant===1){
+      this.initSizingToggle();
+    }
+    else{
+      this.initSizeUpOrDown();
+    }
   }
 //start method using event listener event wheel launching sizeOnWheel method
   initSizeUpOrDown() {
@@ -16,6 +22,13 @@ class SizeOnWheel {
   initSizingToggle() {
     window.addEventListener('wheel',(event)=>{ this.#sizingToggle(event,this.element)})
   }
+
+  removeEventListeners(){
+    if (SizeOnWheel.currentInstance){
+      window.removeEventListener("wheel",SizeOnWheel.currentInstance.boundHandler);
+    }
+  }
+
 //private method changing size of element on event(wheel)
   #sizeUpOrDown = (event,element) => {
     if (event.deltaY > 0) {
@@ -41,4 +54,19 @@ class SizeOnWheel {
   } 
 }
 const square=document.querySelector('.container')
-new SizeOnWheel(square);
+let scrollVariant=1;
+const changeButton=document.querySelector('.changeScroll'); 
+changeButton.addEventListener('click',(event)=>{
+  if(scrollVariant===1){
+    scrollVariant=0;
+  console.log(scrollVariant);
+
+ new SizeOnWheel(square,scrollVariant);
+  }
+  else{
+
+    scrollVariant=1;
+  console.log(scrollVariant);
+ new SizeOnWheel(square,scrollVariant);
+  }
+})
