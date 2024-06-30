@@ -39,7 +39,7 @@ clickButton.addEventListener("click",()=>{
 //  if ()
 //
 //}
-
+//gotta work on that
 const courseSolution=document.querySelector(".courseSection--js");
 
 //Pobieramy element z DOM (ze strony internetowej)
