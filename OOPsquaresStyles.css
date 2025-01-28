@@ -92,6 +92,9 @@ a,ul,ol,li{
   background-color:#f0f;
 }
 .courseSolution{
+
+  display: flex;
+  flex-direction:column;
   background-color:#745;
   width:50vw;
   height:100vh;
@@ -105,6 +108,8 @@ a,ul,ol,li{
 .courseMainSection{
             display: flex;
             margin: 10px auto;
+            flex-wrap:wrap;
+
 }
 
         .courseDivElement {
