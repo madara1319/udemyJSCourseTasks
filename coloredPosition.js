@@ -20,5 +20,7 @@ div.style.backgroundColor='hsl(0, 0%, 100%)';
 
 window.addEventListener("mousemove",(e)=>{
     div.textContent=`${e.clientX}, ${e.clientY}`;
+
+    div.style.backgroundColor=`rgb(${e.clientX/6}, ${e.clientY/4}, ${e.clientX/e.clientY})`;
     body.style.backgroundColor=`rgb(${e.clientX/3}, ${e.clientY/2}, ${e.clientX/e.clientY})`;
 })
