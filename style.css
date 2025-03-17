@@ -29,7 +29,7 @@ a,ul,ol,li{
   display:flex;
   margin:6px;
  padding:25px; 
-  display:flex;
+ flex-wrap:wrap;
   background-color:#F4D35E:
 }
 .navigation__link{
