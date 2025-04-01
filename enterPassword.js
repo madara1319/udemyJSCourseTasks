@@ -5,9 +5,11 @@ const div=document.querySelector('.message')
 const password="user";
 const message="testMessage"
 //arrow func doesnt create this
+
 input.addEventListener('input',(e)=>{
     if(password==e.target.value){
         div.textContent=message;
+        console.log(e.target.value)
         e.target.value='';
     }
     else{
