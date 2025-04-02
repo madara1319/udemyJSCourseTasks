@@ -14,6 +14,7 @@ input.addEventListener('input',(e)=>{
     }
     else{
         div.textContent=''
+        console.log(div.textContent)
     }
 })
 
