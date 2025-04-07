@@ -5,22 +5,24 @@ const div = document.querySelector('.message')
 const password = "user";
 const message = "testMessage"
 //arrow func doesnt create this
-const messages = [message, "Wiosna to piękna pora roku", "chce się zajebać"]
-const passwords = [password, "wiosna", "mateusz"];
+const messages = [message, "Wiosna to piękna pora roku", "witaj świecie!", "lorem Ipsum", "bardzo tajna wiadomość to: kopytko"]
+const passwords = [password, "wiosna", "mateusz", "JaJeCzKo", "hfu28xn/*kjnAFUU8g&5cgh"];
+
+const lowerCasePassword = passwords.map(element => element.toLowerCase());
+
+console.log(lowerCasePassword)
+
+console.log(lowerCasePassword.map(el=>el.toUpperCase()))
 
 input.addEventListener('input', (e) => {
-    div.textContent='';
-    const text = e.target.value;
-    passwords.forEach((element,index) => {
-        if (element === text) {
+    div.textContent = '';
+    const text = e.target.value.toLowerCase();
+    passwords.forEach((element, index) => {
+        if (element.toLowerCase() === text) {
             //div.textContent = messages[Math.floor(Math.random() * (messages.length - 1))];
-            div.textContent=messages[index]
+            div.textContent = messages[index]
             e.target.value = '';
         }
-  //      else {
-  //          div.textContent = '';
-
-  //      }
     })
 })
 
@@ -33,14 +35,3 @@ input.addEventListener('focus', (e) => {
 input.addEventListener('blur', (e) => {
     e.target.classList.remove('active')
 })
-//input.addEventListener('input',(e)=>{
-//    if(password==e.target.value){
-//        div.textContent=message;
-//        console.log(e.target.value)
-//        e.target.value='';
-//    }
-//    else{
-//        div.textContent=''
-//        console.log(div.textContent)
-//    }
-//})
