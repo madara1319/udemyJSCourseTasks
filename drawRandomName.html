@@ -7,7 +7,26 @@
     <title>UdemyJSCourseTasks</title>
     <meta property="og:title" content="UdemyJSCourseTasks" />
     <meta property="og:description" content="Tasks from Udemy JS Course" />
-    <link rel="stylesheet" href="OOPsquaresStyles.css" />
+    <style>
+        html {
+            font-family: arial;
+        }
+
+        button {
+            display: block;
+            margin: 50px auto 50px;
+            background-color: #fff;
+            border: 5px solid cadetblue;
+            padding: 20px 50px;
+            font-size: 22px;
+        }
+
+        div {
+            margin: 10px;
+            font-size: 26px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,26 +49,11 @@
         </nav>
     </header>
     <main>
-        <div class="mainBox">
-            <div class="mySolution">
-                <section class="mainSection section--js">
-                    <button class="mainButton mainButton--js">Kliknij</button>
-                    <div class="boxOfBoxes boxOfBoxes--js">
-                        <div class="container notVisible container--js">random</div>
-                    </div>
-                </section>
-            </div>
-            <div class="courseSolution">
-                <button class="courseMainButton courseMainButton--js">
-                    Kliknij mnie!
-                </button>
+        <button>Losuj imię dla dziecka</button>
+        <div></div>
 
-                <section class="courseMainSection courseSection--js">
-                </section>
-            </div>
-        </div>
     </main>
-    <script src="OOPsquaresSolution.js"></script>
+    <script src="drawRandomName.js"></script>
 </body>
 
 </html>

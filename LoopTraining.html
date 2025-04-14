@@ -1,66 +1,68 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UdemyJSCourseTasks</title>
     <meta property="og:title" content="UdemyJSCourseTasks" />
     <meta property="og:description" content="Tasks from Udemy JS Course" />
     <link rel="stylesheet" href="#" />
-<style>
-li{
-  display:none;
-}
-</style>
-  </head>
-  <body>
+    <style>
+        li {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
     <header class="mainHeader">
-      <nav class="navigation nav--js">
-        <a class="navigation__link" href="index.html">firstSubPage</a>
-        <a class="navigation__link" href="scrollSize.html">secondSubPage</a>
-        <a class="navigation__link" href="OOPsquares.html">thirdSubPage</a>
-        <a class="navigation__link" href="LoopTraining.html">FourthSubPage</a>
-        <a class="navigation__link" href="addGrowingLiItems.html">FifthSubPage</a>
-        <a class="navigation__link" href="coloredPosition.html">SixthSubPage</a>
-        <a class="navigation__link" href="clickColor.html">seventhSubPage</a>
-        <a class="navigation__link" href="movableSquare.html">eighthSubPage</a>
-        <a class="navigation__link" href="colorGradingArrows.html">ninthSubPage</a>
-        <a class="navigation__link" href="enterPassword.html">tenthSubPage</a>
-        <a class="navigation__link" href="#">eleventhSubPage</a>
-        <a class="navigation__link" href="#">twelfthSubPage</a>
-        <a class="navigation__link" href="#">thirtheenthSubPage</a>
-        <a class="navigation__link" href="#">fourteenthSubPage</a>
-      </nav>
+        <nav class="navigation nav--js">
+            <a class="navigation__link" href="index.html">firstSubPage</a>
+            <a class="navigation__link" href="scrollSize.html">secondSubPage</a>
+            <a class="navigation__link" href="OOPsquares.html">thirdSubPage</a>
+            <a class="navigation__link" href="LoopTraining.html">FourthSubPage</a>
+            <a class="navigation__link" href="addGrowingLiItems.html">FifthSubPage</a>
+            <a class="navigation__link" href="coloredPosition.html">SixthSubPage</a>
+            <a class="navigation__link" href="clickColor.html">seventhSubPage</a>
+            <a class="navigation__link" href="movableSquare.html">eighthSubPage</a>
+            <a class="navigation__link" href="colorGradingArrows.html">ninthSubPage</a>
+            <a class="navigation__link" href="enterPassword.html">tenthSubPage</a>
+            <a class="navigation__link" href="drawRandomName.html">eleventhSubPage</a>
+            <a class="navigation__link" href="#">twelfthSubPage</a>
+            <a class="navigation__link" href="#">thirtheenthSubPage</a>
+            <a class="navigation__link" href="#">fourteenthSubPage</a>
+        </nav>
     </header>
-  <!-- Ciekawostka: By stworzyć taką strukturę za pomocą skrótu (Emmet) możesz napisać: button+ul>li*10>{element - $} -->
+    <!-- Ciekawostka: By stworzyć taką strukturę za pomocą skrótu (Emmet) możesz napisać: button+ul>li*10>{element - $} -->
 
-  <button>Start</button>
-  <ul>
-    <li>element 1</li>
-    <li>element 2</li>
-    <li>element 3</li>
-    <li>element 4</li>
-    <li>element 5</li>
-    <li>element 6</li>
-    <li>element 7</li>
-    <li>element 8</li>
-    <li>element 9</li>
-    <li>element 10</li>
-  </ul>
+    <button>Start</button>
+    <ul>
+        <li>element 1</li>
+        <li>element 2</li>
+        <li>element 3</li>
+        <li>element 4</li>
+        <li>element 5</li>
+        <li>element 6</li>
+        <li>element 7</li>
+        <li>element 8</li>
+        <li>element 9</li>
+        <li>element 10</li>
+    </ul>
 
-  <script >
-    let i=0;
-    const button=document.querySelector('button');
-    const lista=document.querySelectorAll('li');
-    button.addEventListener("click",()=>{
-    lista.forEach((element)=>{
-    element.style.display='flex';
-    i+=1; 
-    element.style.fontSize=`${i}px`;
-    });
-    })
-  </script>
+    <script>
+        let i = 0;
+        const button = document.querySelector('button');
+        const lista = document.querySelectorAll('li');
+        button.addEventListener("click", () => {
+            lista.forEach((element) => {
+                element.style.display = 'flex';
+                i += 1;
+                element.style.fontSize = `${i}px`;
+            });
+        })
+    </script>
 
 </body>
+
 </html>
