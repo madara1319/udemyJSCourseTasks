@@ -4,5 +4,5 @@ const randomCodesGenerator = () => {
     let randomCode = Math.random()
     codes.textContent=`${randomCode}`
 }
-
+//comment
 button.addEventListener('click', randomCodesGenerator)
